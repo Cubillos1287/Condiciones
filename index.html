@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío Condiciones</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <h1 class="Titulo">Desafío Condiciones</h1>
+    <section class="primerejercicio">
+        <h2>Ejemplo 1 - Clickea la Imagen</h2>
+        <button class="boton" onclick="
+         imagen = document.querySelector('.boton');
+         if (imagen.style.border === '2px solid red') {
+                    imagen.style.border = '';
+                } else {
+                    imagen.style.border = '2px solid red';
+                }
+        ">
+        </button>
+    </section>
+    <section class="segundoejercicio">
+        <h2 class="ejemplo2">Ejemplo 2 - Elige tus Stickers</h2>
+        <p class="descripcion">Puedes elegir hasta 10 stickers</p>
+        <div class="Stickers">
+            <div class="sticker1">
+                <img id="imagen1" src="./assets/img/carita.png" alt="carita feliz">
+                <input id="sticker1" type="number" value="0">
+            </div>
+            <div class="sticker2">
+                <img id="imagen2" src="./assets/img/gatito.png" alt="gatito">
+                <input id="sticker2" type="number" value="0">
+            </div>
+            <div class="sticker3">   
+                <img id="imagen3" src="./assets/img/planta.png" alt="planta">
+                <input id="sticker3" type="number" value="0">
+            </div>
+        </div>
+        <button class="cantidad" id="verificar" onclick="
+        s1= Number(document.querySelector('#sticker1'). value) || 0;
+        s2= Number(document.querySelector('#sticker2'). value) || 0;
+        s3= Number(document.querySelector('#sticker3'). value) || 0;
+        total= s1 + s2 +s3;
+        if (total <= 10) {
+                    document.querySelector('#totalsticker').innerHTML = 'Llevas ' + total + ' tickers';
+                } else{
+                    document.querySelector('#totalsticker').innerHTML = 'Llevas demasiados stickers'
+                }
+        "> Cantidad de Sticker</button>
+        <p>Total: <span id="totalsticker"> 0</span></p>
+    </section>
+    <section class="tercerejercicio">
+        <h2 class="ejemplo3">Ejemplo 3: Ingresa el Password</h2>
+        <div class="card">
+            <h2>Ingresa el password:</h2>
+            <div class="selects">
+            <select id="numero1" name="numeros">
+                <option value=""></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            <select id="numero2" name="numeros">
+                <option value=""></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            <select id="numero3" name="numeros">
+                <option value=""></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            </div>
+            <button class="ingresar" onclick="
+           v1 = document.querySelector('#numero1').value
+           v2 = document.querySelector('#numero2').value
+           v3 = document.querySelector('#numero3').value
+           password= v1 + v2 + v3;
+            if (password === '911') {
+                        document.querySelector('#clavecorrecta').innerHTML = 'Password 1 correcto';
+                    } else if (password ==='714'){
+                        document.querySelector('#clavecorrecta').innerHTML = 'Password 2 correcto';
+                    }else{
+                        document.querySelector('#clavecorrecta').innerHTML = 'Password incorrecto';
+                    }
+            ">Ingresar</button>
+            <p>Verificar: <span id="clavecorrecta"></span></p>
+        </div>
+    </section>
+
+
+</body>
+
+</html>
